@@ -26,12 +26,6 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.CalendarMonth
-import androidx.compose.material.icons.outlined.Checkroom
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.PhotoCamera
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
@@ -51,6 +45,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.Checkroom
+import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.AccountCircle
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,25 +104,25 @@ fun BottomNavBar(
         NavigationBarItem(
             selected = selectedTab == BottomTab.Home,
             onClick = { onTabSelected(BottomTab.Home) },
-            icon = { Icon(Icons.Outlined.Home, contentDescription = "Home") },
+            icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
             label = { Text("Home") }
         )
         NavigationBarItem(
             selected = selectedTab == BottomTab.Wardrobe,
             onClick = { onTabSelected(BottomTab.Wardrobe) },
-            icon = { Icon(Icons.Outlined.Checkroom, contentDescription = "Wardrobe") },
+            icon = { Icon(Icons.Filled.Checkroom, contentDescription = "Wardrobe") },
             label = { Text("Wardrobe") }
         )
         NavigationBarItem(
             selected = selectedTab == BottomTab.Events,
             onClick = { onTabSelected(BottomTab.Events) },
-            icon = { Icon(Icons.Outlined.CalendarMonth, contentDescription = "Events") },
+            icon = { Icon(Icons.Filled.CalendarMonth, contentDescription = "Events") },
             label = { Text("Events") }
         )
         NavigationBarItem(
             selected = selectedTab == BottomTab.Account,
             onClick = { onTabSelected(BottomTab.Account) },
-            icon = { Icon(Icons.Outlined.AccountCircle, contentDescription = "Account") },
+            icon = { Icon(Icons.Filled.AccountCircle, contentDescription = "Account") },
             label = { Text("Account") }
         )
     }
@@ -349,7 +350,7 @@ fun ScanGridCard() {
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(
-                imageVector = Icons.Outlined.PhotoCamera,
+                imageVector = Icons.Filled.PhotoCamera,
                 contentDescription = "Scan",
                 tint = Color(0xFF2BA8C8),
                 modifier = Modifier.size(32.dp)
@@ -376,7 +377,7 @@ fun ScanButton() {
         modifier = Modifier.fillMaxWidth()
     ) {
         Icon(
-            imageVector = Icons.Outlined.PhotoCamera,
+            imageVector = Icons.Filled.PhotoCamera,
             contentDescription = "Scan"
         )
         Spacer(modifier = Modifier.width(8.dp))
